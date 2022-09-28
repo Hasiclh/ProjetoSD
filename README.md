@@ -6,3 +6,5 @@ O projeto consiste em fazer um cadastro de cliente e um agendador de consultas.
 Luis Henrique Fonseca de Andrade | RA: 818115910
 
 Gabriel da Silva costa           | RA: 821140338
+
+Bruno Rodrigues Reis             | RA: 8222243147
