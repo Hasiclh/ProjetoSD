@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Cadastro Terapeuta</h1>
+                    <h6>Por favor insira suas informações!!</h6>
+                </div>
+                <form>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome completo</label>
+                        <input type="nome" class="form-control" id="nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipoDeAtendimento" class="form-label">Tipo de Atendimento</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Escolha qual o tipo de atimento você realiza</option>
+                            <option value="1">Presencial</option>
+                            <option value="2">Online</option>
+                            <option value="3">Presencial e/ou online</option>
+                          </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="valorDaConsulta" class="form-label">Valor da consulta</label>
+                        <input type="valorDaConsulta" class="form-control" id="valorDaConsulta" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="bairro" class="form-label">Bairro</label>
+                        <input type="bairro" class="form-control" id="bairro">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="telefone" class="form-control" id="telefone" aria-describedby="telefoneHelp">
+                        <div id="telefoneHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailPaciente" class="form-label">Email</label>
+                        <input type="emailPaciente" class="form-control" id="emailPaciente">
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="senha" class="form-control" id="senha">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Registrar</button>
+                </form>
+                <a style="color: white;" routerLink="/">Já registrado? Clique aqui para login</a>
+            </div>
+        </div>
+
+    </div>
+</div>

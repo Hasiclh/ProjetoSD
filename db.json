@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    {
+      "nome": "lh",
+      "telefone": 12998247982,
+      "email": "lh@mail.com",
+      "senha": "1234",
+      "tipo": 1,
+      "id": 1
+    }
+  ],
+  "tipo": [
+    {
+      "id": 1,
+      "nome": "paciente"
+    },
+    {
+      "id": 2,
+      "nome": "terapeuta"
+    }
+  ]
+}
