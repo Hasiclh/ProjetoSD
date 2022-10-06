@@ -49,6 +49,30 @@
       "valor": 245,
       "bairro": "mooca",
       "id": 5
+    },
+    {
+      "nome": "pedro",
+      "sobrenome": "henrique",
+      "telefone": "21442141241",
+      "email": "tesrtgmailcom",
+      "senha": "1234",
+      "user": "paciente",
+      "tipoDeAtendimento": null,
+      "valor": null,
+      "bairro": null,
+      "id": 6
+    },
+    {
+      "nome": "cris",
+      "sobrenome": "amber",
+      "telefone": "12421521521",
+      "email": "crigmailcom",
+      "senha": "1245521",
+      "user": "terapeuta",
+      "tipoDeAtendimento": "Presencial",
+      "valor": 2112,
+      "bairro": "Mooca",
+      "id": 7
     }
   ]
 }

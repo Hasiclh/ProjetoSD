@@ -13,23 +13,22 @@
     <div class="img">
     </div>
     <div class="sigup-content">
-      <form [formGroup]="signupForm" (ngSubmit)="signUP()">
+      <form [formGroup]="signupForm" (ngSubmit)="signUP($event)">
         <h2 class="title">Cadastrar</h2>
         <div class="input-div one">
           <div class="i">
             <i class="fas fa-user"></i>
           </div>
           <div class="div">
-            <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Nome">
+            <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Nome" [ngClass]="{'form-submitted': formSubmitted}">
           </div>
         </div>
-
         <div class="input-div one">
           <div class="i">
             <i class="fas fa-user"></i>
           </div>
           <div class="div">
-            <input formControlName="sobrenome" type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
+            <input formControlName="sobrenome" type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" [ngClass]="{'form-submitted': formSubmitted}">
           </div>
         </div>
 
@@ -39,7 +38,7 @@
           </div>
           <div class="div">
             <input formControlName="telefone" type="text" name="telefone" id="telefone" class="form-control"
-              formControlName='telefone' matInput mask="(00) 00000-0000" placeholder="Telefone" value="">
+              formControlName='telefone' matInput mask="(00) 00000-0000" placeholder="Telefone" value="" [ngClass]="{'form-submitted': formSubmitted}">
           </div>
         </div>
 
@@ -49,7 +48,7 @@
           </div>
           <div class="div">
             <input formControlName="email" type="text" class="form-control" id="emailPaciente" placeholder="Email"
-              matInput mask="A*@A*.A*" value="">
+              matInput mask="A*@A*.A*" value="" [ngClass]="{'form-submitted': formSubmitted}">
           </div>
         </div>
 
@@ -58,16 +57,16 @@
             <i class="fas fa-lock"></i>
           </div>
           <div class="div">
-            <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="Senha">
+            <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="Senha" [ngClass]="{'form-submitted': formSubmitted}">
           </div>
         </div>
 
 
             <div class="wrapper">
               <input formControlName="user" type="radio" id="option-1" value="paciente"
-                (change)="getRadioValor($event)">
+                (change)="getRadioValor($event)"  [ngClass]="{'form-submitted': formSubmitted}" >
               <input formControlName="user" type="radio" id="option-2" value="terapeuta"
-                (change)="getRadioValor($event)">
+                (change)="getRadioValor($event)"  [ngClass]="{'form-submitted': formSubmitted}" >
               <label for="option-1" class="option option-1">
                 <div class="dot"></div>
                 <span>Paciente</span>
@@ -84,8 +83,8 @@
               <i class="fas fa-user"></i>
             </div>
             <div class="div">
-              <select formControlName="tipoDeAtendimento" class="classic">
-                <option disabled value>Tipo de Atendimento</option>
+              <select formControlName="tipoDeAtendimento" class="classic"  [ngClass]="{'form-submitted': formSubmitted}">
+                <option  [ngValue]="null" [disabled]="true" >Tipo de Atendimento</option>
                 <option value="Presencial">Presencial</option>
                 <option value="Online">Online</option>
                 <option value="Presencial e/ou online">Presencial e/ou online</option>
@@ -100,7 +99,7 @@
               <span class="prefix">R$</span>
               <input formControlName="valor" type="text" class="form-control" id="valorDaConsulta" mask="separator.2"
                 placeHolder="Valor da consulta" suffix=",00" separatorLimit="9999" [decimalMarker]="','"
-                thousandSeparator="." [allowNegativeNumbers]="false" onlyPositive>
+                thousandSeparator="." [allowNegativeNumbers]="false" onlyPositive  [ngClass]="{'form-submitted': formSubmitted}">
             </div>
           </div>
           <div class="input-div one">
@@ -109,7 +108,7 @@
             </div>
             <div class="div">
               <input formControlName="bairro" type="text" class="form-control" id="bairro"
-                placeholder="Bairro em que atua">
+                placeholder="Bairro em que atua"  [ngClass]="{'form-submitted': formSubmitted}">
             </div>
           </div>
         </div>

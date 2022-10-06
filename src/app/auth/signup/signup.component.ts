@@ -12,27 +12,58 @@ export class SignupComponent implements OnInit {
 
   //user:boolean = false;
   visible: boolean = false;
+  formSubmitted = false;
+
 
   public signupForm !: FormGroup;
   constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.signupForm = this.formBuilder.group({
-      nome: [''],
-      sobrenome: [''],
-      telefone: [''],
-      email: [""],
-      senha: [''],
-      user: [],
-      tipoDeAtendimento: [""],
-      valor:[""],
-      bairro: [""]
-    });
-
+    this.buildForm();
+    this.setUserCategoryValidators();
   }
 
+buildForm(){
+  this.signupForm = this.formBuilder.group({
+    nome: [null],
+    sobrenome: [null, [Validators.required]],
+    telefone: [null, [Validators.required]],
+    email: [null, [Validators.required]],
+    senha: [null, [Validators.required]],
+    user: ['paciente'],
+    tipoDeAtendimento:[null, [Validators.required]],
+    valor:[null, [Validators.required]],
+    bairro: [null, [Validators.required]]
+  });
+}
+  setUserCategoryValidators() {
+    const tipoDeAtendimentoControl = this.signupForm.get('tipoDeAtendimento');
+    const valorControl = this.signupForm.get('valor');
+    const bairroControl = this.signupForm.get('bairro');
 
-  signUP() {
+    this.signupForm.get('user').valueChanges
+      .subscribe(user => {
+        if (user === 'paciente') {
+          tipoDeAtendimentoControl.setValidators(null);
+          valorControl.setValidators(null);
+          bairroControl.setValidators(null);
+        }
+
+        if (user === 'terapeuta') {
+          tipoDeAtendimentoControl.setValidators([Validators.required]);
+          valorControl.setValidators([Validators.required]);
+          bairroControl.setValidators([Validators.required]);
+        }
+
+        tipoDeAtendimentoControl.updateValueAndValidity();
+        valorControl.updateValueAndValidity();
+        bairroControl.updateValueAndValidity();
+      });
+  }
+
+  signUP(event: any) {
+    event.preventDefault();
+    this.formSubmitted = true;
     this.http.post<any>("http://localhost:3000/usuarios", this.signupForm.value)
       .subscribe(res => {
         alert("Cadastrado com sucesso");
