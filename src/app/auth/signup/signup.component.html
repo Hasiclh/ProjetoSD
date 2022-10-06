@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <title>Animated Login Form</title>
   <link rel="stylesheet" type="text/css" href="./signup.component.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a81368914c.js"></script>
@@ -40,7 +39,7 @@
           </div>
           <div class="div">
             <input formControlName="telefone" type="text" name="telefone" id="telefone" class="form-control"
-              formControlName='telefone' matInput mask="(00) 000-0000" placeholder="(00) 000-0000" value="">
+              formControlName='telefone' matInput mask="(00) 00000-0000" placeholder="Telefone" value="">
           </div>
         </div>
 
@@ -78,7 +77,7 @@
                 <span>Terapeuta</span>
               </label>
             </div>
-            
+
         <div *ngIf="visible" class="div-hideen">
           <div class="input-div one">
             <div class="i">
@@ -115,6 +114,7 @@
           </div>
         </div>
         <input type="submit" class="btn" value="Registrar">
+        <a style="color: #010101;" routerLink="/login">Já registrado? Clique aqui para login</a>
       </form>
     </div>
   </div>
