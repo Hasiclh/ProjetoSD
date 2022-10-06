@@ -23,19 +23,20 @@ export class SignupComponent implements OnInit {
     this.setUserCategoryValidators();
   }
 
-buildForm(){
-  this.signupForm = this.formBuilder.group({
-    nome: [null],
-    sobrenome: [null, [Validators.required]],
-    telefone: [null, [Validators.required]],
-    email: [null, [Validators.required]],
-    senha: [null, [Validators.required]],
-    user: ['paciente'],
-    tipoDeAtendimento:[null, [Validators.required]],
-    valor:[null, [Validators.required]],
-    bairro: [null, [Validators.required]]
-  });
-}
+  buildForm() {
+    this.signupForm = this.formBuilder.group({
+      nome: ['', [Validators.required]],
+      sobrenome: [null, Validators.required],
+      telefone: [null, Validators.required],
+      email: [null, Validators.required],
+      senha: [null, Validators.required],
+      user: ['paciente'],
+      tipoDeAtendimento:[null, [Validators.required]],
+      valor:[null, [Validators.required]],
+      bairro: [null, [Validators.required]]
+    });
+  }
+
   setUserCategoryValidators() {
     const tipoDeAtendimentoControl = this.signupForm.get('tipoDeAtendimento');
     const valorControl = this.signupForm.get('valor');
@@ -64,14 +65,18 @@ buildForm(){
   signUP(event: any) {
     event.preventDefault();
     this.formSubmitted = true;
+
+    if (this.signupForm.valid) {
     this.http.post<any>("http://localhost:3000/usuarios", this.signupForm.value)
       .subscribe(res => {
         alert("Cadastrado com sucesso");
         this.signupForm.reset();
       }, err => {
         alert("Alguma coisa deu errada")
-      })
-  }
+      });
+    }
+  
+}
 
 
   getRadioValor(event: any): void {
