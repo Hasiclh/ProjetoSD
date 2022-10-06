@@ -7,16 +7,48 @@
       "senha": "1234",
       "tipo": 1,
       "id": 1
-    }
-  ],
-  "tipo": [
-    {
-      "id": 1,
-      "nome": "paciente"
     },
     {
-      "id": 2,
-      "nome": "terapeuta"
+      "user": "false",
+      "nome": "lh",
+      "sobrenome": "oi",
+      "telefone": "122121212",
+      "email": "lhgmailcom",
+      "senha": "teste1234",
+      "id": 2
+    },
+    {
+      "user": "paciente",
+      "nome": "lh",
+      "sobrenome": "orei",
+      "telefone": "124214214",
+      "email": "lhgmailcom",
+      "senha": "214124",
+      "id": 3
+    },
+    {
+      "user": "terapeuta",
+      "nome": "lh",
+      "sobrenome": "te",
+      "telefone": "124124214",
+      "email": "testegmailcom",
+      "senha": "t1241",
+      "tipoDeAtendimento": "2",
+      "valor": 240,
+      "bairro": "mooca",
+      "id": 4
+    },
+    {
+      "user": "terapeuta",
+      "nome": "lh",
+      "sobrenome": "te",
+      "telefone": "323232532",
+      "email": "tesgmailcom",
+      "senha": "124214",
+      "tipoDeAtendimento": "Presencial",
+      "valor": 245,
+      "bairro": "mooca",
+      "id": 5
     }
   ]
 }

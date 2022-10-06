@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { NgxMaskModule } from 'ngx-mask'
 
 
 import { AppComponent } from './app.component';
@@ -21,8 +22,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { LoginComponent } from './auth/login/login.component';
-import { SignupPComponent } from './auth/signup-p/signup-p.component';
-import { SignupTComponent } from './auth/signup-t/signup-t.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -30,9 +31,9 @@ import { SignupTComponent } from './auth/signup-t/signup-t.component';
     declarations: [
 
         AppComponent,
-        SignupPComponent,
-        SignupTComponent,
-        LoginComponent
+        SignupComponent,
+        LoginComponent,
+        HomeComponent
     ],
 
     imports: [
@@ -47,7 +48,8 @@ import { SignupTComponent } from './auth/signup-t/signup-t.component';
         MatButtonModule,
         BrowserAnimationsModule,
         MatProgressSpinnerModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxMaskModule.forRoot()
     ],
 
     
