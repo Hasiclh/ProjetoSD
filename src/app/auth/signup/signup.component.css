@@ -5,14 +5,12 @@
 	margin: 0;
 	box-sizing: border-box;
 	
-	
 }
 
 body{
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 	overflow-y: scroll;
-
 }
 
 
@@ -134,6 +132,20 @@ form{
 }
 
 .input-div > div > input{
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 0.5rem 0.7rem;
+	font-size: 1.2rem;
+	color: #555;
+	font-family: 'poppins', sans-serif;
+}
+
+.input-div > input-box > input{
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -250,6 +262,7 @@ a:hover{
 	padding: 0 10px;
 	border: 2px solid lightgrey;
 	transition: all 0.3s ease;
+	
   }
   .wrapper .option .dot{
 	height: 20px;
@@ -283,10 +296,7 @@ a:hover{
   #option-2:checked:checked ~ .option-2 .dot{
 	background: #fff;
   }
-  #option-1:checked:checked ~ .option-1 .dot::before{
-	opacity: 1;
-	transform: scale(1);
-  }
+  #option-1:checked:checked ~ .option-1 .dot::before,
   #option-2:checked:checked ~ .option-2 .dot::before{
 	opacity: 1;
 	transform: scale(1);
@@ -304,10 +314,9 @@ a:hover{
 
 	/* styling */
 	background-color: white;
-	border: thin solid blue;
+	border: thin solid #0a5c0a;
 	border-radius: 4px;
 	display: inline-block;
-	font-family: 'Lato', sans-serif;
 	line-height: 1.5em;
 	padding: 0.5em 3.5em 0.5em 1em;
   
@@ -324,11 +333,11 @@ a:hover{
   
   /* arrows */
   
-  select.form-select {
+  select.classic {
 	background-image:
-	  linear-gradient(45deg, transparent 50%, blue 50%),
-	  linear-gradient(135deg, blue 50%, transparent 50%),
-	  linear-gradient(to right, skyblue, skyblue);
+	  linear-gradient(45deg, transparent 50%, #f5a3f5 50%),
+	  linear-gradient(135deg, #f5a3f5 50%, transparent 50%),
+	  linear-gradient(to right, #0a5c0a, #0a5c0a);
 	background-position:
 	  calc(100% - 20px) calc(1em + 2px),
 	  calc(100% - 15px) calc(1em + 2px),
@@ -340,11 +349,11 @@ a:hover{
 	background-repeat: no-repeat;
   }
   
-  select.form-select:focus {
+  select.classic:focus {
 	background-image:
-	  linear-gradient(45deg, white 50%, transparent 50%),
-	  linear-gradient(135deg, transparent 50%, white 50%),
-	  linear-gradient(to right, gray, gray);
+	  linear-gradient(45deg, #0a5c0a 50%, transparent 50%),
+	  linear-gradient(135deg, transparent 50%, #0a5c0a 50%),
+	  linear-gradient(to right, #f5a3f5, #f5a3f5);
 	background-position:
 	  calc(100% - 15px) 1em,
 	  calc(100% - 20px) 1em,
@@ -356,4 +365,37 @@ a:hover{
 	background-repeat: no-repeat;
 	border-color: grey;
 	outline: 0;
+  }
+
+  .input-box {
+	display: flex;
+	align-items: center;
+	max-width: 300px;
+	background: #fff;
+	border: 1px solid #a0a0a0;
+	border-radius: 4px;
+	padding-left: 0.5rem;
+	overflow: hidden;
+	font-family: sans-serif;
+  }
+  
+  .input-box .prefix {
+	font-weight: 300;
+	font-size: 14px;
+	color: #999;
+  }
+  
+  .input-box input {
+	flex-grow: 1;
+	font-size: 13px;
+	background: #fff;
+	border: none;
+	outline: none;
+	padding: 0.3rem;
+	padding: 3px 1px;
+    width: 100%;
+  }
+  
+  .input-box:focus-within {
+	border-color: #777;
   }

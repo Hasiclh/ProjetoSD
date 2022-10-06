@@ -12,8 +12,6 @@ export class SignupComponent implements OnInit {
 
   //user:boolean = false;
   visible: boolean = false;
-  user: any 
-
 
   public signupForm !: FormGroup;
   constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
@@ -25,12 +23,15 @@ export class SignupComponent implements OnInit {
       telefone: [''],
       email: [""],
       senha: [''],
-      user: ['',Validators.required],
+      user: [],
       tipoDeAtendimento: [""],
       valor:[""],
       bairro: [""]
-    })
+    });
+
   }
+
+
   signUP() {
     this.http.post<any>("http://localhost:3000/usuarios", this.signupForm.value)
       .subscribe(res => {
@@ -39,7 +40,6 @@ export class SignupComponent implements OnInit {
       }, err => {
         alert("Alguma coisa deu errada")
       })
-
   }
 
 

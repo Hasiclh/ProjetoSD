@@ -1,98 +1,124 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Animated Login Form</title>
-	<link rel="stylesheet" type="text/css" href="./signup.component.css">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animated Login Form</title>
+  <link rel="stylesheet" type="text/css" href="./signup.component.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-	<div class="container">
-		<div class="img">
-		</div>
-		<div class="sigup-content">
-			<form [formGroup]="signupForm" (ngSubmit)="signUP()">
-				<h2 class="title">Cadastrar</h2>
-           		<div class="input-div one">
-           		   <div class="i">
-           		   		<i class="fas fa-user"></i>
-           		   </div>
-           		   <div class="div">
-                      <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Nome">
-           		   </div>
-           		</div>
+  <div class="container">
+    <div class="img">
+    </div>
+    <div class="sigup-content">
+      <form [formGroup]="signupForm" (ngSubmit)="signUP()">
+        <h2 class="title">Cadastrar</h2>
+        <div class="input-div one">
+          <div class="i">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="div">
+            <input formControlName="nome" type="text" class="form-control" id="nome" placeholder="Nome">
+          </div>
+        </div>
 
-               <div class="input-div one">
-                <div class="i">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="div">
-                  <input formControlName="sobrenome" type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
-                </div>
-             </div>
+        <div class="input-div one">
+          <div class="i">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="div">
+            <input formControlName="sobrenome" type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
+          </div>
+        </div>
 
-             <div class="input-div one">
-              <div class="i">
-                  <i class="fas fa-user"></i>
-              </div>
-              <div class="div">
-                <input formControlName="telefone" type="text" name="telefone" id="telefone" class="form-control"
-                formControlName='telefone' matInput mask="(00) 000-0000" placeholder="(00) 000-0000" value="">              </div>
-           </div>
+        <div class="input-div one">
+          <div class="i">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="div">
+            <input formControlName="telefone" type="text" name="telefone" id="telefone" class="form-control"
+              formControlName='telefone' matInput mask="(00) 000-0000" placeholder="(00) 000-0000" value="">
+          </div>
+        </div>
 
-           <div class="input-div one">
+        <div class="input-div one">
+          <div class="i">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="div">
+            <input formControlName="email" type="text" class="form-control" id="emailPaciente" placeholder="Email"
+              matInput mask="A*@A*.A*" value="">
+          </div>
+        </div>
+
+        <div class="input-div pass">
+          <div class="i">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="div">
+            <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="Senha">
+          </div>
+        </div>
+
+
+            <div class="wrapper">
+              <input formControlName="user" type="radio" id="option-1" value="paciente"
+                (change)="getRadioValor($event)">
+              <input formControlName="user" type="radio" id="option-2" value="terapeuta"
+                (change)="getRadioValor($event)">
+              <label for="option-1" class="option option-1">
+                <div class="dot"></div>
+                <span>Paciente</span>
+              </label>
+              <label for="option-2" class="option option-2">
+                <div class="dot"></div>
+                <span>Terapeuta</span>
+              </label>
+            </div>
+            
+        <div *ngIf="visible" class="div-hideen">
+          <div class="input-div one">
             <div class="i">
-                <i class="fas fa-user"></i>
+              <i class="fas fa-user"></i>
             </div>
             <div class="div">
-              <input formControlName="email" type="text" class="form-control" id="emailPaciente" placeholder="Email"
-              matInput mask="A*@A*.A*" value="">            
+              <select formControlName="tipoDeAtendimento" class="classic">
+                <option disabled value>Tipo de Atendimento</option>
+                <option value="Presencial">Presencial</option>
+                <option value="Online">Online</option>
+                <option value="Presencial e/ou online">Presencial e/ou online</option>
+              </select>
             </div>
-         </div>
-              
-           		<div class="input-div pass">
-           		   <div class="i"> 
-           		    	<i class="fas fa-lock"></i>
-           		   </div>
-           		   <div class="div">
-                     <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="Senha">
-                    </div>
-            	</div>
-
-              <div class="wrapper">
-                <input formControlName="select" type="radio" name="select" id="option-1"  value="paciente" 
-                (change)="getRadioValor($event)">
-                <input formControlName="select" type="radio" name="select" id="option-2" value="terapeuta"
-                (change)="getRadioValor($event)">
-                  <label for="option-1" class="option option-1">
-                    <div class="dot"></div>
-                     <span>Paciente</span>
-                     </label>
-                  <label for="option-2" class="option option-2">
-                    <div class="dot"></div>
-                     <span>Terapeuta</span>
-                  </label>
-               </div>
-              
-              <div *ngIf="visible" class="div-hideen">
-                <select formControlName="tipoDeAtendimento" class="form-select" >
-                  <option >Tipo de Atendimento</option>
-                  <option value="Presencial">Presencial</option>
-                  <option value="Online">Online</option>
-                  <option value="Presencial e/ou online">Presencial e/ou online</option>
-                </select>
-
-                <label for="valorDaConsulta" class="form-label">Valor da consulta</label>
-                <input formControlName="valor" type="text" class="form-control" id="valorDaConsulta" mask="separator.2" prefix="R$ " separatorLimit="9999"  [decimalMarker]="','" thousandSeparator="." [allowNegativeNumbers]="false" onlyPositive
-                >
-                <label for="bairro" class="form-label">Bairro</label>
-                <input formControlName="bairro" type="text" class="form-control" id="bairro">
-              </div>
-              <input type="submit" class="btn" value="Registrar">
-            </form>
+          </div>
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="input-box">
+              <span class="prefix">R$</span>
+              <input formControlName="valor" type="text" class="form-control" id="valorDaConsulta" mask="separator.2"
+                placeHolder="Valor da consulta" suffix=",00" separatorLimit="9999" [decimalMarker]="','"
+                thousandSeparator="." [allowNegativeNumbers]="false" onlyPositive>
+            </div>
+          </div>
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="div">
+              <input formControlName="bairro" type="text" class="form-control" id="bairro"
+                placeholder="Bairro em que atua">
+            </div>
+          </div>
         </div>
+        <input type="submit" class="btn" value="Registrar">
+      </form>
     </div>
-    <script type="text/javascript" src="js/main.js"></script>
+  </div>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>
