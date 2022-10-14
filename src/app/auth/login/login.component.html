@@ -14,14 +14,14 @@
 		<div class="img">
 		</div>
 		<div class="login-content">
-			<form action="index.html">
+			<form [formGroup]="login" (ngSubmit)="logindata(login)" class="form-box">				
 				<h2 class="title">Welcome</h2>
 				<div class="input-div one">
 					<div class="i">
 						<i class="fas fa-user"></i>
 					</div>
 					<div class="div">
-						<input type="text" class="input" placeholder="Email" matInput mask="A*@A*.A*" >
+						<input formControlName="email" type="text" class="input" placeholder="Email" matInput mask="A*@A*.A*" >
 					</div>
 				</div>
 				<div class="input-div pass">
@@ -29,7 +29,7 @@
 						<i class="fas fa-lock"></i>
 					</div>
 					<div class="div">
-						<input type="password" class="input" placeholder="Senha">
+						<input formControlName="senha" type="password" class="input" placeholder="Senha">
 					</div>
 				</div>
 				<input type="submit" class="btn" value="Login">

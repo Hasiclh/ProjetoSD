@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm, Validators } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  //user:boolean = false;
   visible: boolean = false;
   formSubmitted = false;
 

@@ -1,5 +1,40 @@
 {
   "usuarios": [
-     
+    {
+      "nome": "pedro",
+      "sobrenome": "henrique",
+      "telefone": "12212121221",
+      "email": "tesrtgmailcom",
+      "senha": "teste1234",
+      "user": "terapeuta",
+      "tipoDeAtendimento": "Presencial",
+      "valor": 204,
+      "bairro": "Mooca",
+      "id": 1
+    },
+    {
+      "nome": "paciente",
+      "sobrenome": "paciente",
+      "telefone": "21441242142",
+      "email": "pacientegmailcom",
+      "senha": "1234",
+      "user": "paciente",
+      "tipoDeAtendimento": null,
+      "valor": null,
+      "bairro": null,
+      "id": 2
+    },
+    {
+      "nome": "paciente",
+      "sobrenome": "paciente",
+      "telefone": "12442142142",
+      "email": "paciente@gmail.com",
+      "senha": "1234",
+      "user": "paciente",
+      "tipoDeAtendimento": null,
+      "valor": null,
+      "bairro": null,
+      "id": 3
+    }
   ]
 }
