@@ -20,6 +20,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PacienteComponent } from './pages/paciente/paciente.component';
+import { TerapeutaComponent } from './pages/terapeuta/terapeuta.component';
+import { AgendarConsultaComponent } from './pages/agendar-consulta/agendar-consulta.component';
+
 
 
 @NgModule({
@@ -29,7 +33,10 @@ import { HomeComponent } from './pages/home/home.component';
         AppComponent,
         SignupComponent,
         LoginComponent,
-        HomeComponent
+        HomeComponent,
+        PacienteComponent,
+        TerapeutaComponent,
+        AgendarConsultaComponent
     ],
 
     imports: [

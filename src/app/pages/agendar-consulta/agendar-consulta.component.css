@@ -1,0 +1,22 @@
+
+.btn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #0a5c0a, #0a5c0a, #0a5c0a);
+	background-size: 70%;
+	font-size: 0.7rem;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	margin: 0.5rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+.btn:hover{
+	background-position: right;
+	color: #f5a3f5;
+}

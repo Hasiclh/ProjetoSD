@@ -35,6 +35,33 @@
       "valor": null,
       "bairro": null,
       "id": 3
+    },
+    {
+      "nome": "kleber",
+      "sobrenome": "machado",
+      "telefone": "21444124214",
+      "email": "kleber@gmail.com",
+      "senha": "1234",
+      "user": "terapeuta",
+      "tipoDeAtendimento": "Presencial",
+      "valor": 240,
+      "bairro": "Mooca",
+      "id": 4
+    },
+    {
+      "nome": "roger",
+      "sobrenome": "musical",
+      "telefone": "21441512512",
+      "email": "roger@gmail.com",
+      "senha": "1234",
+      "user": "terapeuta",
+      "tipoDeAtendimento": "Presencial e/ou online",
+      "valor": 240,
+      "bairro": "Penha",
+      "id": 5
     }
+  ],
+  "consultas": [
+
   ]
 }
