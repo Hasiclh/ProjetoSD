@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Olá paciente</h1>
+<body>
+<div mat-dialog-content>
+  <p>Qual horario deseja marcar?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.horario">
+  </mat-form-field>
+</div>
+<div mat-dialog-content>
+    <p>Escolha a data</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.data">
+    </mat-form-field>
+  </div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.horario" 
+             cdkFocusInitial>Ok</button>
+</div>
+</body>

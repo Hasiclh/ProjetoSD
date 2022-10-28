@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { NgxMaskModule } from 'ngx-mask'
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 import { AppComponent } from './app.component';
@@ -23,6 +25,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PacienteComponent } from './pages/paciente/paciente.component';
 import { TerapeutaComponent } from './pages/terapeuta/terapeuta.component';
 import { AgendarConsultaComponent } from './pages/agendar-consulta/agendar-consulta.component';
+import { HorarioComponent } from './pages/horario/horario.component';
 
 
 
@@ -36,7 +39,8 @@ import { AgendarConsultaComponent } from './pages/agendar-consulta/agendar-consu
         HomeComponent,
         PacienteComponent,
         TerapeutaComponent,
-        AgendarConsultaComponent
+        AgendarConsultaComponent,
+        HorarioComponent
     ],
 
     imports: [
@@ -52,7 +56,9 @@ import { AgendarConsultaComponent } from './pages/agendar-consulta/agendar-consu
         BrowserAnimationsModule,
         MatProgressSpinnerModule,
         HttpClientModule,
-        NgxMaskModule.forRoot()
+        NgxMaskModule.forRoot(),
+        MatDialogModule,
+        
     ],
 
     
