@@ -1,21 +1,13 @@
 <h1 mat-dialog-title>Olá paciente</h1>
-<body>
 <div mat-dialog-content>
-  <p>Qual horario deseja marcar?</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.horario">
-  </mat-form-field>
-</div>
-<div mat-dialog-content>
-    <p>Escolha a data</p>
-    <mat-form-field>
-      <input matInput [(ngModel)]="data.data">
-    </mat-form-field>
-  </div>
-
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.horario" 
-             cdkFocusInitial>Ok</button>
-</div>
-</body>
+  <form name="consultaForm" [formGroup]='consultaForm' ng-controller="DateController as dateCtrl">
+    <label for="exampleInput">Seelcione o horario da consulta:</label>
+    <input type="time" id="exampleInput" name="input"  formControlName="time" ng-model="example.value"
+        placeholder="HH:mm:ss" min="08:00:00" max="19:00:00" required />
+    <div role="alert">
+      <span class="error" ng-show="myForm.input.$error.required">
+          Required!</span>
+      <span class="error" ng-show="myForm.input.$error.time">
+          Not a valid date!</span>
+    </div>
+</form>

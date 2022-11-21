@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,35 +11,28 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  login:FormGroup|any;
-  constructor(private _http:HttpClient, private _route:Router) { }
+  private usuarioAutenticado: boolean = false;
 
-  ngOnInit(): void {
-    this.login = new FormGroup({
+  form:FormGroup|any;
+  constructor(private _http:HttpClient, private route:Router, private fb:FormBuilder, private authService: AuthService) { 
+
+    this.form = new FormGroup({
       'email': new FormControl(['', [Validators.required]]),
       'senha': new FormControl( )
     })
   }
-  logindata(login:FormGroup){
+
+  ngOnInit(): void {
+
+  }
+  logindata(){
     // console.log(this.login.value);
-     this._http.get<any>("http://localhost:3000/usuarios")
-     .subscribe(res=>{
-       const user = res.find((a:any)=>{
-         return a.email === this.login.value.email && a.senha === this.login.value.senha
-       });
- 
-       if(user){
-         this.login.reset();
-         this._route.navigate(['/']);
-       }else{
-         alert('Email ou senha incorretos');
-         this._route.navigate(['login']);
-       }
- 
-     }, err=>{
-       alert('Something was wrong');
-     })
+    const val = this.form.value;
+
+    this.authService.login(val.email, val.senha)
+
     
- 
+
    }
-}
+
+  }

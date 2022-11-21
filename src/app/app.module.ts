@@ -26,6 +26,9 @@ import { PacienteComponent } from './pages/paciente/paciente.component';
 import { TerapeutaComponent } from './pages/terapeuta/terapeuta.component';
 import { AgendarConsultaComponent } from './pages/agendar-consulta/agendar-consulta.component';
 import { HorarioComponent } from './pages/horario/horario.component';
+import { AuthService } from './auth/login/auth.service';
+import { AuthGuard } from './guard/auth.guard';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -58,11 +61,12 @@ import { HorarioComponent } from './pages/horario/horario.component';
         HttpClientModule,
         NgxMaskModule.forRoot(),
         MatDialogModule,
+        MatDatepickerModule
         
     ],
 
     
-    providers: [],
+    providers: [AuthService, AuthGuard],
 
     bootstrap: [AppComponent]
 })

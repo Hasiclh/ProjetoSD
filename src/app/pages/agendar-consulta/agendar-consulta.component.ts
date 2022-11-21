@@ -53,14 +53,11 @@ export class AgendarConsultaComponent implements OnInit {
   }
 
   agendarConsulta() {
-    let dialogRef = this.dialog.open(HorarioComponent, {
-      width: '250px',
-      data: { hora: this.terapeutas, data: this.terapeutas }
+    const dialogRef = this.dialog.open(HorarioComponent, {
+      width: '30%'
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.httpClient.post<any>("http://localhost:3000/consultas", result).subscribe(res => {
-      this.hora = result
-    });
+      this.httpClient.post<any>("http://localhost:3000/consultas", result)
   })
   }
 

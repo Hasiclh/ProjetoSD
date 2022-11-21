@@ -14,7 +14,7 @@
 		<div class="img">
 		</div>
 		<div class="login-content">
-			<form [formGroup]="login" (ngSubmit)="logindata(login)" class="form-box">				
+			<form [formGroup]="form" (ngSubmit)="logindata()" class="form-box">				
 				<h2 class="title">Welcome</h2>
 				<div class="input-div one">
 					<div class="i">
@@ -29,10 +29,10 @@
 						<i class="fas fa-lock"></i>
 					</div>
 					<div class="div">
-						<input formControlName="senha" type="password" class="input" placeholder="Senha">
+						<input  formControlName="senha" type="password" class="input" placeholder="Senha">
 					</div>
 				</div>
-				<input type="submit" class="btn" routerLink="/agendar-consulta" value="Login">
+				<input type="submit" class="btn" routerLink="/agendar-consulta" value="Login" >
 				<input type="submit" class="btn" routerLink="/signup" value="Cadastrar">
 			</form>
 		</div>
