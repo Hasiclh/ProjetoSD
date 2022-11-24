@@ -1,13 +1,23 @@
-<h1 mat-dialog-title>Olá paciente</h1>
+<h1 mat-dialog-title>Olá Paciente</h1> 
 <div mat-dialog-content>
-  <form name="consultaForm" [formGroup]='consultaForm' ng-controller="DateController as dateCtrl">
-    <label for="exampleInput">Seelcione o horario da consulta:</label>
-    <input type="time" id="exampleInput" name="input"  formControlName="time" ng-model="example.value"
-        placeholder="HH:mm:ss" min="08:00:00" max="19:00:00" required />
-    <div role="alert">
-      <span class="error" ng-show="myForm.input.$error.required">
-          Required!</span>
-      <span class="error" ng-show="myForm.input.$error.time">
-          Not a valid date!</span>
-    </div>
-</form>
+  <form [formGroup]="consultaForm">
+<mat-form-field appearance="outline">
+<mat-label>Confirme seu email</mat-label> 
+<input formControlName="email" matInput placeholder="Email" /> 
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>Escolha uma data</mat-label>
+  <input formControlName="data" matInput [matDatepicker]="picker">
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+  <mat-label>Escolha uma hora</mat-label>
+  <mat-form-field>
+    <input formControlName="hora" matInput type="time" min="09:00" max="19:00">
+  </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="consulta()">Save</button>
+</div>

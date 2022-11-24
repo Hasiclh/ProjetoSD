@@ -1,1 +1,47 @@
-<p>terapeuta works!</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML HomePage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+  
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Therapy</a>
+      <nav class="nav-items">
+        <a routerLink="/signup">Logout</a>
+      </nav>
+    </header>
+    <main>
+        <div class="container">
+          <div class="card list-terapeutas">
+            <h5 class="card-header">Horarios agendados</h5>
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Email do Paciente</th>
+
+                    <th scope="col">Data</th>
+                    <th scope="col">Hora</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let paciente of pacientes">
+                    <td>{{paciente.email}}</td>
+
+                    <td>{{paciente.data}}</td>
+                    <td>{{paciente.hora}}</td>
+
+                    <td>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </body>

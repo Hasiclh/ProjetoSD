@@ -5,6 +5,7 @@ import { AuthService  } from 'src/app/auth/login/auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanLoad  {
+  
 
   constructor(
     private authService: AuthService,
@@ -16,7 +17,6 @@ export class AuthGuard implements CanActivate, CanLoad  {
     state: RouterStateSnapshot
   ) : Observable<boolean> | boolean {
 
-    console.log('AuthGuard');
 
     return this.verificarAcesso();
   }
@@ -32,8 +32,8 @@ export class AuthGuard implements CanActivate, CanLoad  {
   }
 
 canLoad(route: Route): Observable<boolean>|Promise<boolean>|boolean {
-    console.log('canLoad: verificando se usuário pode carregar o cod módulo');
 
     return this.verificarAcesso();
   }
+
 }

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
     this.form = new FormGroup({
       'email': new FormControl(['', [Validators.required]]),
-      'senha': new FormControl( )
+      'senha': new FormControl('')
     })
   }
 
@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
     // console.log(this.login.value);
     const val = this.form.value;
 
-    this.authService.login(val.email, val.senha)
+      this.authService.login(val.email, val.senha)
 
     
-
+ 
    }
 
   }

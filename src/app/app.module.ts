@@ -29,7 +29,8 @@ import { HorarioComponent } from './pages/horario/horario.component';
 import { AuthService } from './auth/login/auth.service';
 import { AuthGuard } from './guard/auth.guard';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import {MatNativeDateModule} from '@angular/material/core';
+import { MAT_DATE_LOCALE } from '@angular/material/core'
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
         PacienteComponent,
         TerapeutaComponent,
         AgendarConsultaComponent,
-        HorarioComponent
+        HorarioComponent,
+        TerapeutaComponent
     ],
 
     imports: [
@@ -61,12 +63,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
         HttpClientModule,
         NgxMaskModule.forRoot(),
         MatDialogModule,
-        MatDatepickerModule
+        MatDatepickerModule,
+        MatNativeDateModule
         
     ],
 
     
-    providers: [AuthService, AuthGuard],
+    providers: [AuthService, AuthGuard, { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
 
     bootstrap: [AppComponent]
 })

@@ -22,6 +22,7 @@ export class AuthService {
     .subscribe(res=>{
         const user = res.find((a:any)=>{
           return a.email === email && a.senha === senha
+          
         });
         if(user){
             this.usuarioAutenticado = true;

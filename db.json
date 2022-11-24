@@ -62,6 +62,23 @@
     }
   ],
   "consultas": [
-
+    {
+      "email": "paciente@gmail.com",
+      "data": "2022-11-25T03:00:00.000Z",
+      "hora": "16:37",
+      "id": 1
+    },
+    {
+      "email": "paciente@gmail.com",
+      "data": "2022-11-17T03:00:00.000Z",
+      "hora": "19:43",
+      "id": 2
+    },
+    {
+      "email": "paciente@gmail.com",
+      "data": "2022-11-25T03:00:00.000Z",
+      "hora": "20:46",
+      "id": 3
+    }
   ]
 }

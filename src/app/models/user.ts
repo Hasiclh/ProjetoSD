@@ -1,4 +1,7 @@
+import { Data } from "@angular/router";
+
 export interface User {
     email: string;
-    senha: string;
+    hora:string;
+    data:Data;
 }

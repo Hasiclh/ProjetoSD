@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { from, Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {  Observable  } from 'rxjs';
+import { retry,  } from 'rxjs/operators';
 import { ListaT } from 'src/app/models/lista-t';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog,  } from '@angular/material/dialog';
 import { HorarioComponent } from '../horario/horario.component';
-import { Consultas } from 'src/app/models/consultas';
 
 
 
@@ -18,7 +17,6 @@ export class AgendarConsultaComponent implements OnInit {
 
   terapeuta = {} as ListaT;
   terapeutas: ListaT[] | undefined;
-  consultas: Consultas[] | undefined;
 
 
   hora!: number;
@@ -46,19 +44,11 @@ export class AgendarConsultaComponent implements OnInit {
     });
   }
 
-  getPacientes(): Observable<ListaT[]> {
-    return this.httpClient.get<ListaT[]>(this.url)
-      .pipe(
-        retry(2))
-  }
+
 
   agendarConsulta() {
     const dialogRef = this.dialog.open(HorarioComponent, {
-      width: '30%'
     });
-    dialogRef.afterClosed().subscribe(result => {
-      this.httpClient.post<any>("http://localhost:3000/consultas", result)
-  })
   }
 
 ngOnInit(): void {
