@@ -59,6 +59,54 @@
       "valor": 240,
       "bairro": "Penha",
       "id": 5
+    },
+    {
+      "nome": "paciente",
+      "sobrenome": "jonas",
+      "telefone": "21212121122",
+      "email": "jonas@gmail.com",
+      "senha": "1234",
+      "user": "paciente",
+      "tipoDeAtendimento": null,
+      "valor": null,
+      "bairro": null,
+      "id": 6
+    },
+    {
+      "nome": "luis henrique",
+      "sobrenome": "fonseca",
+      "telefone": "12412421412",
+      "email": "luis@gmail.com",
+      "senha": "1234",
+      "user": "paciente",
+      "tipoDeAtendimento": null,
+      "valor": null,
+      "bairro": null,
+      "id": 7
+    },
+    {
+      "nome": "andre",
+      "sobrenome": "fonseca",
+      "telefone": "11215125125",
+      "email": "fonseca@gmail.com",
+      "senha": "1234",
+      "user": "paciente",
+      "tipoDeAtendimento": null,
+      "valor": null,
+      "bairro": null,
+      "id": 8
+    },
+    {
+      "nome": "santos",
+      "sobrenome": "fonseca",
+      "telefone": "11891257892",
+      "email": "santos@gmail.com",
+      "senha": "1234",
+      "user": "paciente",
+      "tipoDeAtendimento": null,
+      "valor": null,
+      "bairro": null,
+      "id": 9
     }
   ],
   "consultas": [
@@ -79,6 +127,18 @@
       "data": "2022-11-25T03:00:00.000Z",
       "hora": "20:46",
       "id": 3
+    },
+    {
+      "email": "fonseca@gmail.com",
+      "data": "2022-11-26T03:00:00.000Z",
+      "hora": "15:30",
+      "id": 4
+    },
+    {
+      "email": "santos@gmail.com",
+      "data": "2022-11-25T03:00:00.000Z",
+      "hora": "15:30",
+      "id": 5
     }
   ]
 }

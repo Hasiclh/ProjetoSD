@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private _http:HttpClient, private route:Router, private fb:FormBuilder, private authService: AuthService) { 
 
     this.form = new FormGroup({
-      'email': new FormControl(['', [Validators.required]]),
+      'email': new FormControl(['']),
       'senha': new FormControl('')
     })
   }

@@ -10,3 +10,4 @@ Gabriel da Silva costa           | RA: 821140338
 Luis Henrique Fonseca de Andrade | RA: 818115910
 
 
+Link para o video do projeto: https://youtu.be/NwehN6zCnyE
